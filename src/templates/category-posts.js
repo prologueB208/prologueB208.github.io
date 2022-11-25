@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Logo from "../components/logo"
+import Header from "../components/header"
 
 const CategoryPost = ({ data, location, pageContext }) => {
   // ...
@@ -14,6 +16,10 @@ const CategoryPost = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location}>
+      <div className="display-row">
+        <Logo />
+        <Header />
+      </div>
       <Seo title={`Posts in ${category}`} /> {/* 페이지 title 수정 */}
       {/* <Bio /> */}
       <h3>{`Current: ${category}`}</h3> {/* 현재 카테고리 표시 */}

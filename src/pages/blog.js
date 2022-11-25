@@ -9,10 +9,12 @@ const Blog = ({ data }) => {
 
   return (
     <Layout title="Blog">
-      <Header />
-      <Logo />
+      <div className="display-row">
+        <Logo />
+        <Header />
+      </div>
+      <h1>Blog</h1>
       <div>
-        <h1>Blog</h1>
         <ol>
           {posts.map((node, i) => {
             return (

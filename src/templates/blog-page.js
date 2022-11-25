@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Logo from "../components/logo"
+import Header from "../components/header"
 
 const BlogPageTemplate = ({
   data: { site, markdownRemark: page },
@@ -10,19 +12,25 @@ const BlogPageTemplate = ({
 }) => {
   return (
     <Layout location={location} title={site.siteMetadata.title}>
+      <div className="display-row">
+        <Logo />
+        <Header />
+      </div>
       <article
         className="blog-page"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{page.fields.slug}</h1>
+          <h1 itemProp="headline">
+            {page.fields.slug.substring(1, page.fields.slug.length - 1)}
+          </h1>
         </header>
+        <hr />
         <section
           dangerouslySetInnerHTML={{ __html: page.html }}
           itemProp="articleBody"
         />
-        <hr />
       </article>
     </Layout>
   )

@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Logo from "../components/logo"
+import Header from "../components/header"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -12,6 +14,10 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
+      <div className="display-row">
+        <Logo />
+        <Header />
+      </div>
       <article
         className="blog-post"
         itemScope
